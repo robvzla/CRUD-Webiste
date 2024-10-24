@@ -1,0 +1,1183 @@
+/* 
+<!--
+ * Student name: Sirlei Gomes Lucio
+ * Student number: 3043602
+&
+ * Student name: Jesus Roberto Cassino
+ * Student number: 3049988
+ *
+ * LINK:    https://knuth.griffith.ie/~s3049988/ass03/index.php
+-->
+ * 
+*/
+
+/*--- Adding box size for everything---*/
+* {
+  box-sizing: border-box;
+}
+
+/*--- Adding font size for html---*/
+html {
+  font-size: 62.5%;
+}
+
+/*--- Adding font family,font size and line heigh for the body ---*/
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.6rem;
+  line-height: 2;
+}
+
+/*----setting the position absolute and left and right to 0 to get full width,
+ with a bright backgound color---*/
+.app-navigation {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  left: 0;
+  right:0;
+  background: white;
+  font-size: 24px;
+}
+
+/*----aligning navagation items;
+image logo and nav list (center)---*/
+.app-header{
+  display: flex;
+  justify-content: space-between;
+  height: 15rem;
+  width: 100%;
+  align-items: center;
+}
+
+/*---Setting the maximum width of the page(960px)---*/
+.app-container {
+  box-sizing: border-box;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+@media (max-width: 1199px) {
+  .app-container {
+    padding: 32px;
+  }
+}
+
+
+/*--- Adding font family for the titles, font size and aling in the center---*/
+.app-title {
+  font-family: 'Nova Flat', cursive;
+  font-size: 32px;
+  text-align: center;
+}
+
+.app-title_bright {
+  color: white;
+  text-align: left;
+}
+
+/*--- Adding font family for the sub titles, font size, weigh and some space between the letters---*/
+.app-subtitle {
+  font-family: 'Nova Flat', cursive;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+/*---Setting all images with a 100% width ( will not take to much space)---*/
+img {
+  width: 100%;
+}
+
+/*---Making the logo image small setting the max-width--*/
+.header-logo img {
+  max-width: 100px;
+}
+
+/*--- styling the footer, setting the position fixed and left and right to 0 to get full width,
+ with a bright backgound color ---*/
+.app-footer {
+  height: 12rem;
+  background: rgba(255, 255, 255, 0.9);
+  color: black;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/*---Styling the footer messagee; 
+the message will sit in the center of the page 
+" Copyright 2022 - Children's Clould"---*/
+.footer--message {
+  font-size: 20px;
+  margin: 0 auto; /*--- with the width of 960px the margin 0 will set the top and bottom to 0 and the auto will make sure that the message sit in the center---*/
+  max-width: 960px;
+}
+
+/* Adding style for the link buttons; when you hover over the button get a bit bigger*/
+.app-link_btn {
+  background-color: #61BEDC;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+  display: inline-flex;
+  letter-spacing: 2px;
+  padding: 24px 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transform: scale(1);
+  transition: transform 0.1s ease-in-out; /*---- the time to change the  button size (small- big)---*/
+}
+
+.app-link_btn-dark {
+  background-color: #57ABC6;
+}
+
+/*--- Adding style for the link buttons, white color and no text decoration in case of hover, focus or active ---*/
+.app-link_btn,
+.app-link_btn:hover,
+.app-link_btn:focus,
+.app-link_btn:active {
+  color: white;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+}
+
+/* Adding style for the link buttons; when you hover over the button get a bit bigger */
+.app-link_btn:hover {
+  transform: scale(1.02);
+}
+
+
+/*
+ *
+ * Student name: Jesus Roberto Cassino
+ * Student number: 3049988
+ *
+*/
+
+/*Sing In, Sign Up, and Contact Us form style*/
+.signInForm{
+  text-align: center;
+  width: 500px;
+  height: auto;
+  border-radius: 10px;
+  padding: 50px;
+  box-sizing: border-box;
+  background: #60B1CB;
+  box-shadow: 20px 20px 20px hsla(0, 1%, 35%, 0.422);
+}
+
+/*Styiling buttons in the Sign In, Sign Up, and Contact Us form pages*/
+.login-button{
+  color: white;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  background: #61BEDC;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 10px 10px 20px hsla(0, 1%, 35%, 0.422);
+  transition: 0.5s;
+  height: 60px;
+}
+/*Effect to none when hovering over the button*/
+button:hover {
+  box-shadow: none;
+}
+
+/*wrapper is the main container that have all the html elements in the body*/
+.wrapper{
+  padding: 0;
+  padding-bottom: 32px;
+  padding-top: calc(150px + 184px);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 120px);
+  background: #61BEDC;
+}
+
+@media(max-width: 1180px) {
+  .wrapper{
+    padding-top: 160px;
+  }
+}
+
+/*Styling the label text, input fields and login button*/
+.form-label, .form-input, .login-button {
+  display: block;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: large;
+  color: white;
+  font-weight: bolder;
+}
+/*Styling input fields and the login button*/
+.form-input, .login-button {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+/*Setting padding and height for the input*/
+.form-input{
+  padding: 0 0 0 10px;
+  height: 50px;
+  color: black;
+}
+/*Styling title for the form*/
+.form-title{
+  font-size: 2.5rem;
+  color: white;
+}
+/*Styling text for the labels in the form*/
+.form-label{
+  text-align: left;
+  margin: 10px 0 10px 0;
+}
+/*Styling the text and link that takes the user to the registration form*/
+.redirect-label, .redirect-reg{
+  font-size: medium;
+}
+/*Styling the label text*/
+.redirect-label{
+  color: white;
+}
+/*Styling the  sign up form*/
+.signUpForm{
+  text-align: center;
+  width: 500px;
+  height: auto;
+  border-radius: 10px;
+  padding: 50px;
+  box-sizing: border-box;
+  background: #60B1CB;
+  box-shadow: 20px 20px 20px hsla(0, 1%, 35%, 0.422);
+}
+
+/*wrapper is the main container that have all the html elements in the body*/
+.wrapper-response{
+  min-height: 870px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #61BEDC;
+}
+
+.response-title{
+  font-size: 2.5rem;
+  color: white;
+}
+
+.response-msg{
+  font-size: 2rem;
+  color: white;
+  margin: 1% 0 1% 0;
+  padding: 0px 50px 0px 50px
+}
+
+.contact-title{
+  font-size: 2.5rem;
+  color: white;
+}
+
+.contact-text{
+  font-size: 2rem;
+  color: white;
+  margin: 1% 0 1% 0;
+  padding: 0px 30px 0px 0px
+}
+
+.Contact-text-container {
+  flex: 1 1 auto;
+}
+
+.contactUsForm{
+  flex: 2 0 auto;
+  text-align: center;
+  width: 500px;
+  height: auto;
+  border-radius: 10px;
+  padding: 50px;
+  box-sizing: border-box;
+  background: #60B1CB;
+  min-height: 100hv;
+  box-shadow: 20px 20px 20px hsla(0, 1%, 35%, 0.422);
+}
+/*Styling the contact wrapper area in contact form*/
+.wrapper-contact{
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  width: 100%;
+}
+/*Styling the message area in contact form*/
+.message-input{
+  display: block;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: large;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 0 0 0 10px;
+  height: 100px;
+  color: black;
+}
+/*Styling the message area in contact form*/
+textarea{
+  font-size: 2rem;
+  width: 100%;
+  border-radius: 4px;
+}
+
+/* Use a media query to add a breakpoint at 1000px: For Ipads */
+@media screen and (max-width: 1000px) {
+  /*Styling the contact form response for screens less than 1000px*/
+  .wrapper-contact{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background: #61BEDC;
+    margin: 0% 0% 0% 0%;
+  }
+  /*Styling the contact form for screens less than 1000px*/
+  .contactUsForm{
+    text-align: center;
+    width: 500px;
+    height: auto;
+    border-radius: 10px;
+    padding: 50px;
+    box-sizing: border-box;
+    background: #60B1CB;
+    box-shadow: 20px 20px 20px hsla(0, 1%, 35%, 0.422);
+    margin: 50px 0 0 0;
+  }
+}
+
+/* Use a media query to add a breakpoint at 600px: For phones*/
+@media screen and (max-width: 600px) {
+  /*Styling the contact form for screens less than 600px*/
+  .contactUsForm{
+    width: auto;
+    padding: 40px;
+    margin: 50px 0 50px 0;
+  }
+  /*Styling the sign up form for screens less than 600px*/
+  .signUpForm{
+    width: auto;
+    padding: 40px;
+    margin: 50px 0 50px 0;
+  }
+}
+/*Styling the nav bar form for screens less than 600px*/
+li{
+  list-style: none;
+}
+
+a{
+  color: #0d6efd;
+  text-decoration: none;
+}
+
+ /*Styling navegation */
+.navbar{
+  min-height: 15rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+}
+
+ /*Styling navegation bar */
+.nav-menu{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+ /*Styling navegation bar logo */
+.nav-logo{
+  font-size: 2rem;
+}
+ /*Styling navegation bar*/
+.nav-link{
+  font-size: 16px;
+  transition: 0.3s ease;
+}
+ /*Styling navegation bar*/
+@media (max-width: 1200px) {
+  .nav-link {
+    font-size: 20px;
+  }
+}
+
+.nav-link:hover{
+  color: #61BEDC;
+}
+
+.hamburger{
+  display: none;
+  cursor: pointer;
+}
+
+.bar{
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: black;
+}
+
+@media(max-width: 1200px){
+  /*Styling the hamburger navegation bar for mobiles and smaller screens*/
+  .hamburger{
+    display: block;
+  }
+  /*Hidding child when nav bar is shrinked*/
+  .hamburger.active .bar:nth-child(2){
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1)
+  {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3)
+  {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  /*Styling smaller screen nav bar, from left to right transition*/
+  .nav-menu{
+    position: fixed;
+    left: -140%;
+    top: 150px;
+    gap: 0;
+    flex-direction: column;
+    background-color: white;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+  }
+  /*Setting spaces for each nav-link*/
+  .nav-item{
+    margin: 16px 0;
+  }
+
+  .nav-menu.active{
+    left: 0;
+  }
+}
+
+
+/*---Styling the fields;for my profile and add testimonial ---*/
+.form--field-group {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 8px;
+}
+
+/*---Styling the fields;for my profile and add testimonial (making everything "fields" take the same space) ---*/
+.form--field-group > * {
+  flex: 1 1 auto;
+}
+
+/*---Styling the header; alighning profile icon and my profile ---*/
+.form-wrapper header{
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  grid-template-rows: max-content auto;
+  align-items: center;
+  grid-column: 1 / span 2;
+  grid-row: 1;
+  gap: 24px;
+}
+
+/*---Styling the header; for my profile and add testimonial---*/
+.form-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  grid-column: 1;
+  grid-row: 1;
+}
+
+@media (max-width: 1200px) {
+  .form-wrapper {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    grid-column: 1;
+    grid-row: 1;
+    padding: 32px;
+  }
+
+  .form-wrapper header {
+    grid-column: 1;
+  }
+}
+
+/*---Styling the header;for my profile and add testimonial ---*/
+.form-wrapper--form {
+  grid-column: 1;
+  grid-row: 2;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 16px;
+}
+
+/* Bootstrap overrides */
+.form-control {
+  font-size: 2rem;
+}
+/*Styling the text that displays errors in the forms*/
+.error{
+  color: white;
+  font-weight: bolder;
+  font-size: larger;
+  margin: 0px 0px 30px 0px;
+}
+/*Styling the container that holds the checkboxes and days*/
+.days-wrapper{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+/*Setting space for the checkboxes*/
+.checkbox-container{
+  margin: 0px 20px 0px 0px;
+}
+
+/*Styling the select tags by their IDs*/
+#gender, #category, #hours, #kids {
+  width: 100%;
+  background-color: white;
+  border: thin solid blue;
+  border-radius: 4px;
+  display: inline-block;
+  font: inherit;
+  line-height: 1.5em;
+  padding: 0.5em 3.5em 0.5em 1em;
+  /* reset */
+   margin: 0;      
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* Styling the arrows in the dropdown of the register kid form*/
+select.classic {
+  background-image:
+    linear-gradient(45deg, transparent 50%, #1476b3 50%),
+    linear-gradient(135deg, #1476b3 50%, transparent 50%),
+    linear-gradient(to right, rgb(73, 143, 209), rgb(73, 143, 209));
+  background-position:
+    calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px),
+    100% 0;
+  background-size:
+    5px 5px,
+    5px 5px,
+    2.5em 2.5em;
+  background-repeat: no-repeat;
+}
+/*Styling select dropdown menu when is clicked. It becomes upward and grey*/
+select.classic:focus {
+  background-image:
+    linear-gradient(45deg, white 50%, transparent 50%),
+    linear-gradient(135deg, transparent 50%, white 50%),
+    linear-gradient(to right, gray, gray);
+  background-position:
+    calc(100% - 15px) 1em,
+    calc(100% - 20px) 1em,
+    100% 0;
+  background-size:
+    5px 5px,
+    5px 5px,
+    2.5em 2.5em;
+  background-repeat: no-repeat;
+  border-color: grey;
+  outline: 0;
+}
+/*Setting margins in the container of the total amount*/
+.total-container{
+  margin: 30px 0px 0px 0px;
+}
+/*Styling the label for the amount in the total*/
+.total-label{
+  display: inline;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: large;
+  color: white;
+  text-align: left;
+  margin: 10px 0px 10px 0px;
+}
+/*Styling the label for the amount price in the total*/
+.amount{
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: large;
+  color: white;
+  margin: 0px 0 0px 10px;
+}
+/*Styling the label for the checkboxes*/
+.label-days{
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+}
+/*Styling the register kid form itself*/
+.registerKid-form{
+  max-width: 500px;
+  width: auto;
+  text-align: center;
+  height: auto;
+  border-radius: 10px;
+  padding: 50px;
+  box-sizing: border-box;
+  background: #60B1CB;
+  box-shadow: 20px 20px 20px hsla(0, 1%, 35%, 0.422);
+}
+/*Styling the register kid form container*/
+.container-reg-form{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+/*Styling checkboxes. making them bigger and with color*/
+.checkboxes{
+  width: 15px;
+  height: 15px;
+  accent-color: blue;
+}
+
+/*Search Day Details form style*/
+.searchForm{
+  text-align: center;
+  width: 500px;
+  height: auto;
+  border-radius: 10px;
+  padding: 50px;
+  box-sizing: border-box;
+}
+
+.primary-keys {
+  display: block;
+  width: 100%;
+  border-radius: 4px;
+  height: 50px;
+  font-size: large;
+  background-color: white;
+  color: black;
+  font-weight: bolder;
+}
+
+ /*Styling navegation bar dropdrown */
+.dropdown-item {
+  font-size: 16px;
+  padding: 16px 24px;
+}
+
+.spacer{
+  margin: 0px 0px 15px 0px;
+}
+
+
+/* index page*/
+
+/*
+ * Student name: Sirlei Gomes Lucio
+ * Student number: 3042603
+*/
+
+/* Adding a image as a background to the home page*/
+.index {
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.3)
+    ),
+    url(../images/backGroundImage.jpg);
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  padding-top: calc(
+    150px + 184px
+  ); /* the manu size + how much i want of padding*/
+}
+
+/*---Setting a wrapper in the home page content---*/
+.content {
+  flex-wrap: wrap;
+}
+
+/*---Style the 3 elements inside of container main (welcome text and the 2 feature box) and max width for the page (960px) ---*/
+.index-container--main {
+  flex-wrap: wrap;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.95);
+  display: grid;
+  row-gap: 32px;
+  box-sizing: border-box;
+  padding: 32px 0;
+  grid-template-columns: repeat(
+    4,
+    1fr
+  ); /*---Creating grids colums to align the 3 elements inside of container main (welcome text and the 2 feature box) ---*/
+}
+
+/*---Adding margin to title h1---*/
+.index--introduction h1 {
+  margin-bottom: 24px;
+}
+
+/*---Plaging the weolcome text in the center---*/
+.index--introduction {
+  padding: 0 32px;
+  grid-column: 1 / -1;
+}
+
+/*---Style the two feature box; Using display grid to align each element in the right plance, with some padding and gap to give some speca between each ellement.   ---*/
+.index--feature {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, max-content);
+  padding: 0 16px;
+}
+
+/*--Placing the titles in the features box in the bottom of the imagem with a grid row ---*/
+.index--feature-header {
+  grid-row: 2;
+}
+
+/*---Style feture one; setting each feature in a grid ---*/
+.index--feature:nth-of-type(even) {
+  grid-column: 1 / span 2;
+}
+
+/*---Adding a pink color to the button "go to actvities" ---*/
+.index--feature:nth-of-type(even) .app-link_btn {
+  background: #dc61d0;
+}
+
+/*---Style feture two; setting each feature in a grid ---*/
+.index--feature:nth-of-type(odd) {
+  grid-column: 3 / span 2;
+}
+
+/*---Setting 100 por cent width for features box images ---*/
+.index-container--main img {
+  width: 100%;
+}
+
+/*---Style why choose us; with backgroud color, margin and padding to aligh in the page---*/
+.index-container--choose {
+  background-color: #61bedc;
+  margin: 102px 0;
+  padding: 62px 0 72px 0;
+}
+
+/*---Style why choose us; with a display flex and flax row for title be placed in the top and text in the botton with a gab to give some space ---*/
+.index-container--choose .app-container {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 32px;
+}
+
+/*---Style the gallery photos; setting each photo in a grid ---*/
+.index-container--gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /*---Creating grids colums to align the 6 images in the gallery (3comluns and 2 rows) ---*/
+  width: 100%;
+  height: 100%;
+  gap: 32px;
+  padding: 48px 0;
+}
+
+/*---Style the testimonial; margin and padding to aligh in the page---*/
+.index-container--testimonial {
+  background-color: #61bedc;
+  padding-bottom: 120px; /* adding padding 120px for the testimonial to sit right before the footer*/
+  margin: 102px 0 24px 0;
+  padding: 62px 0 72px 0;
+  text-align: center;
+}
+
+/*---Style the testimonial; Adding a dysplay flex and flex flow nowrap, for the elements to sit in place, title on the top and text on the bottom---*/
+.index-container--testimonial .app-container {
+  display: flex;
+  gap: 32px;
+  flex-flow: column nowrap;
+}
+
+.testimonial--container {
+  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 16px;
+  padding: 40px 48px;
+}
+
+.carousel-control-next, .carousel-control-prev {
+  width: unset;
+}
+
+
+/* Activities page */
+
+/* 
+ * Student name: Sirlei Gomes Lucio
+ * Student number: 3042603
+*/
+
+/*---Style the content inside of activities page---*/
+.activities {
+  background-color: #61bedc;
+  background-size: cover;
+  background-position: center;
+  padding-top: calc(
+    150px + 60px
+  ); /* the manu size + how much i want of padding*/
+  padding-bottom: calc(
+    150px + 60px
+  ); 
+}
+
+/*---Setting a bright backgound for activities---*/
+.background-content{
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/*---Style the main text---*/
+.activities-container--main{
+padding: 24px 32px; /*---Adding padding to main text 24px for top and bottom and 32px for left and right ---*/
+
+}
+
+/*---Style the activities list with grid, to place in the left the title and the top, text on the botton left and image in the right---*/
+.activities-list  {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 24px;
+padding: 24px 32px;
+}
+
+/*---Style the activities list with grid: place subtitle on the left side of the page ---*/
+.activities-list .app-subtitle {
+grid-column: 1 / span 2;
+}
+
+/*---Style the activities list with grid: to place in the left the text discription---*/
+.activities-list--text {
+grid-column: 1;
+grid-row: 2;
+}
+
+/*---Style the activities list with grid: to place the image in the right side of the page ---*/
+.activities-list--image {
+grid-column: 2;
+}
+
+/*---Style the activities list; dark background color ---*/
+.app-container .dark {
+background-color:#DFDFDF ;
+}
+
+
+
+/* events page */
+
+/* 
+ * Student name: Sirlei Gomes Lucio
+ * Student number: 3042603
+*/
+
+/*---Style the content inside of events page---*/
+.events {
+  background-color: #61bedc;
+  background-size: cover;
+  background-position: center;
+  padding-top: calc(
+    150px + 148px
+  ); /* the manu size + how much i want of padding*/
+  padding-bottom: calc(150px + 60px);
+}
+
+/*---Setting a bright backgound for events and dividing the page in grids to style the events side by side---*/
+.events .events--list {
+  background-color: rgba(255, 255, 255, 0.8);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/*---Style the main text; placing on the top of the page with grid and adding some padding---*/
+.events--introduction {
+  grid-column: 1 / span 2;
+  padding: 32px;
+}
+
+/*---Style the events list with grid: each event item---*/
+.events--item {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, max-content);
+  padding: 32px;
+}
+
+/*---Adding a dark background in the first and last event ---*/
+.events--item:first-of-type,
+.events--item:last-of-type {
+  background-color: #dfdfdf;
+}
+
+/* services page */
+
+/* 
+ * Student name: Sirlei Gomes Lucio
+ * Student number: 3042603
+*/
+
+/*---Style the content inside of services page---*/
+.services {
+  background-color: #61bedc;
+  background-size: cover;
+  background-position: center;
+  padding-top: calc(
+    150px + 148px
+  ); /* the manu size + how much i want of padding*/
+  padding-bottom: calc(150px + 60px);
+}
+
+/*---Style the service list with a grid, to place the imagem on the top, then title and text discription---*/
+.services--list {
+  background-color: rgba(255, 255, 255, 0.95);
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 40px;
+  padding: 24px;
+}
+
+/*---Placing the photo on the top and title on the bottom of the photo---*/
+.services--item {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, max-content);
+}
+
+/*---Photo position phot in grid 1 and adding some margin---*/
+.services--item img {
+  grid-row: 1;
+  margin-bottom: 16px;
+}
+
+
+/* profile page */
+
+/*
+ * Student name: Sirlei Gomes Lucio
+ * Student number: 3042603
+*/
+
+/*---Styling the profile page; ---*/
+.profile--form-label {
+  color: white;
+}
+
+.profile--icon {
+  width: 100px;
+}
+
+
+
+/* feature_update page */
+.form-field_image {
+  padding-bottom: 16px;
+
+}
+
+/* dailyDetails_ parent page */
+
+/*
+ * Student name: Sirlei Gomes Lucio
+ * Student number: 3042603
+*/
+
+/*---Style the daily details member level---*/
+/*--- Align the elemets in page with a grid---*/
+.child-details--content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 32px;
+}
+
+/*--- Align the header in the left of the page in the first column---*/
+.child-details--header {
+  grid-column: 1 / span 2;
+  grid-row: 1;
+}
+
+/*--- Align the form content: date and buttom---*/
+.child-details--form {
+  display: flex;
+  flex-flow: column nowrap;
+  row-gap: 32px;
+  grid-column: 1;
+  grid-row: 2;
+  margin-bottom: 40px;
+}
+
+/*--- Align the table content in the right grid---*/
+.child-details--table {
+  grid-column: 1 / span 2;
+  grid-row: 3;
+}
+
+
+/* testimonial_add page */
+
+/*---Styling the testimonial page; ---*/
+.text-content-left {
+  color: white;
+  padding: 0 64px;
+}
+
+
+/* ContactUs page */
+
+/* 
+ * Student name: Sirlei Gomes Lucio
+ * Student number: 3042603
+*/
+
+/*---Setting a bright backgound for Contact us Manage---*/
+.background-content_contact{
+  background-color: #E5E5E5;
+  border-spacing: 0;
+  border-radius: 6px;
+}
+
+/*---Contact us Manage; aligning the header for each section---*/
+.contact-main-header{
+  padding-bottom: 90px;
+  text-align: center;
+  font-size: 42px;
+
+}
+
+/*---Contact us Manage; aligning the header for each section---*/
+.content-contact-us header{
+  display: grid;
+  grid-template-columns: 1fr 1fr max-content;
+  padding: 24px;
+  align-items: center;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 20%);
+}
+
+/*---Contact us Manage; adding padding to paragraph---*/
+.content-contact-us p {
+  padding: 24px;
+}
+
+
+/* testimonial_manage page */
+
+/* 
+ * Student name: Sirlei Gomes Lucio
+ * Student number: 3042603
+*/
+
+/*---Setting a bright backgound for Testimonial Manage---*/
+.background-content_testimonial{
+  background-color: #E5E5E5;
+  border-spacing: 0;
+  border-radius: 6px;
+}
+
+/*---Testimonial Manage; aligning the header ---*/
+.testimonial-manage-main-header{
+  padding-bottom: 90px;
+  text-align: center;
+  font-size: 42px;
+
+}
+
+/*---Testimonial Manage; aligning the header for each section---*/
+.content-testimonial-manage {
+  display: grid;
+  grid-template-columns: max-content 1fr 1fr max-content;
+  padding: 24px;
+  align-items: center;
+  gap: 16px;
+}
+
+/*---Testimonial Manage; adding padding to paragraph---*/
+.comment {
+  padding: 24px;
+}
+
+.bg:hover{
+  background-color: #030869;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
